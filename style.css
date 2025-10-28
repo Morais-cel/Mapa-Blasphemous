@@ -1,0 +1,112 @@
+:root
+{
+    --cor_principal: #463334;
+    --cor_secundaria: #251b1c;
+    --cor_terciaria: #b2bb64
+}
+
+*
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+#map
+{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+}
+
+div .leaflet-bottom
+{
+    display: none;
+}
+
+.mark
+{
+    opacity: 0.5;
+}
+
+div .leaflet-popup-content-wrapper{
+    border-radius: 10px;
+    color: white;
+    background-color: var(--cor_principal);
+}
+
+div .leaflet-popup-tip, div .div_checkbox
+{
+    background-color: var(--cor_secundaria);
+}
+
+div .leaflet-popup-tip, div .leaflet-popup-content-wrapper
+{
+    border: 1px solid var(--cor_terciaria); 
+}
+
+div .leaflet-popup-content
+{
+    margin: 0px;
+    border-radius: 0px;
+}
+
+div .popup
+{
+    margin: 0px;
+
+    
+    & h2
+    {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 5px
+    };
+
+    & p
+    {
+        margin: 5px;
+    }
+}
+
+div .div_checkbox
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5em;
+    border-top: 1px solid black;
+    border-radius: 0px 0px 10px 10px;
+
+    & input
+    {
+        display: none;
+        scale: 1.5;
+        margin: 0px 5px;
+    };
+    
+    & label::before
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: 1px solid white;
+        margin-right: 10px;
+    }
+
+    & input:checked + label::before
+    {
+        content: "✓";
+    }
+
+    & label
+    {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 14pt;
+        font-weight: bolder;
+    }
+}

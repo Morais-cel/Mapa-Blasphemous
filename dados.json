@@ -1,0 +1,385 @@
+{
+    "savepoints": 
+        {
+            "titulo_padrao": "Prie Dieu",
+            "desc_padrao": "Reze para marcar seu local de nascimento, restaurar a vida e os frascos de bile.",
+            "locais":
+                [
+                    {"id": "sv_1", "coords": [183,425]},
+                    {"id": "sv_2", "coords": [280,425]},
+                    {"id": "sv_3", "coords": [456,425]},
+                    {"id": "sv_4", "coords": [792,425]},
+                    {"id": "sv_5", "coords": [760,473]},
+                    {"id": "sv_6", "coords": [840,584]},
+                    {"id": "sv_7", "coords": [744,585]},
+                    {"id": "sv_8", "coords": [440,489]},
+                    {"id": "sv_9", "coords": [296,521]},
+                    {"id": "sv_10", "coords": [440,568]},
+                    {"id": "sv_11", "coords": [584,648]},
+                    {"id": "sv_12", "coords": [296,649]},
+                    {"id": "sv_13", "coords": [424,776]},
+                    {"id": "sv_14", "coords": [200,490]},
+                    {"id": "sv_15", "coords": [136,376]},
+                    {"id": "sv_16", "coords": [680,361]},
+                    {"id": "sv_17", "coords": [536,296]},
+                    {"id": "sv_18", "coords": [456,137]},
+                    {"id": "sv_19", "coords": [408,73]},
+                    {"id": "sv_20", "coords": [888,393]},
+                    {"id": "sv_21", "coords": [984,681]},
+                    {"id": "sv_22", "coords": [904,329]},
+                    {"id": "sv_23", "coords": [1000,473]},
+                    {"id": "sv_24", "coords": [968,585]},
+                    {"id": "sv_25", "coords": [1064,569]},
+                    {"id": "sv_26", "coords": [1144,441]},
+                    {"id": "sv_27", "coords": [1144,409]},
+                    {"id": "sv_28", "coords": [1144,361]},
+                    {"id": "sv_29", "coords": [1192,313]},
+                    {"id": "sv_30", "coords": [1064,329]},
+                    {"id": "sv_31", "coords": [984,249]},
+                    {"id": "sv_32", "coords": [1160,185]},
+                    {"id": "sv_33", "coords": [1256,137]},
+                    {"id": "sv_34", "coords": [1288,681]}
+                ]
+        },
+    
+    "confessor_statue":
+        {
+            "titulo_padrao":"Estátua de confessoras",
+            "desc_padrao": "Interaja com a estátua para o penitente teus seus pecados perdoados, retirar a penalidade adquirida ao morrer.",
+            "locais":
+                [
+                    {"id": "statue_1", "coords": [168,439]},
+                    {"id": "statue_2", "coords": [792,455]},
+                    {"id": "statue_3", "coords": [344,680]},
+                    {"id": "statue_4", "coords": [488,296]},
+                    {"id": "statue_5", "coords": [1080,375]},
+                    {"id": "statue_6", "coords": [1096,424]},
+                    {"id": "statue_7", "coords": [872,264]}
+                ]
+        },
+    
+    "travel_location":
+        {
+            "desc_padrao": "Portal que permite o penitente realizar a viagem rápida por Cvstodia.",
+            "locais":
+                [
+                    {
+                        "id": "f_silenciosa", 
+                        "titulo": "Portão de Viagem - Irmandade do Pesar Silencioso", 
+                        "coords": [168,472],
+                        "marker": true
+                    },
+                    {
+                        "id": "f_albero", 
+                        "titulo": "Portão de Viagem - Albero",
+                        "coords": [456,440],
+                        "marker": true
+                    },
+                    {
+                        "id": "f_ascendido",
+                        "titulo": "Portão de Viagem - Ascensão da Mágoa",
+                        "coords": [280,697],
+                        "marker": true
+                    },
+                    {
+                        "id": "f_sal",
+                        "titulo": "Portão de Viagem - Ecos de Sal",
+                        "coords": [568,648],
+                        "marker": true
+                    },
+                    {
+                        "id": "f_sonhos",
+                        "titulo": "Portão de Viagem - Sonhos de Misericórida",
+                        "coords": [888,585],
+                        "marker": true
+                    },
+                    {
+                        "id":"f_arvore",
+                        "titulo": "Portão de Viagem - Árvore Ferrosa",
+                        "coords": [888,409],
+                        "marker": true
+                    },
+                    {
+                        "id": "f_chamuscada",
+                        "titulo": "Portão de Viagem - Convento da Nossa Senhora da Face Chamuscada",
+                        "coords": [520,40],
+                        "marker": true
+                    },
+                    {
+                        "id": "f_biblioteca",
+                        "titulo": "Portão de Viagem - Biblioteca das Palavras Proibidas",
+                        "coords": [1224,457],
+                        "marker": true
+                    },
+                    {
+                        "id":"f_catedral",
+                        "titulo": "Portão de Viagem - Telhado da Catedral-Mor",
+                        "coords": [1128,184],
+                        "marker": true
+                    },
+                    {
+                        "id":"f_mae",
+                        "titulo":"Portão de Viagem - Mãe de Todas as Mães",
+                        "coords":[1352,681],
+                        "marker": true
+                    }
+                ]
+        },
+
+    "mea_culpa_shrine":
+        {
+            "titulo_padrao": "Altares de Mea Culpa",
+            "desc_padrao": "Interaja com o altar para desbloquear novas habilidades para a Mea Culpa, além de aumentar o poder de ataque da mesma.",
+            "locais":
+                [
+                    {"id":"shrine_1", "coords": [168,488]},
+                    {"id":"shrine_2", "coords": [472,440]},
+                    {"id":"shrine_3", "coords": [489,600]},
+                    {"id":"shrine_4", "coords": [520,72]},
+                    {"id":"shrine_5", "coords": [1128,456]},
+                    {"id":"shrine_6", "coords":[1160,329]},
+                    {"id":"shrine_7", "coords":[1273,185]}
+                ]
+        },
+
+    "life_upg":
+        {
+            "titulo_padrao": "Dama das Seis Dores",
+            "desc_padrao": "Interaja com a mesma para adquirir um upgrade permanente na saúde máxima do penitente.",
+            "locais":
+                [
+                    {"id":"lady_1", "coords":[536,777]},
+                    {"id":"lady_2", "coords":[520,281]},
+                    {"id":"lady_3", "coords":[488,56]},
+                    {"id":"lady_4", "coords":[680,585]},
+                    {"id":"lady_5", "coords":[1080,489]},
+                    {"id":"lady_6", "coords":[1240,265]}
+                ]
+        },
+
+    "fervor_upg":
+        {
+            "titulo_padrao":"Óleo dos Peregrinos",
+            "desc_padrao": "Interaja para adquirir um upgrade permanente no fervor máxima do penitente.",
+            "locais":
+                [
+                    {"id":"oil_1", "coords": [376,777]},
+                    {"id":"oil_2", "coords": [552,503]},
+                    {"id":"oil_3", "coords": [568,168]},
+                    {"id":"oil_4", "coords": [936,584]},
+                    {"id":"oil_5", "coords": [920,297]},
+                    {"id":"oil_6", "coords": [1176,424]}
+                ]
+        },
+
+    "flask_upg":
+        {
+            "titulo_padrao":"Fontes Sanguíneas",
+            "desc_padrao":"Interaja para reabastecer os Frascos de Bile e aumentar o número máximo de Frascos de Bile, caso aja Vasos de Bile Vazios presente em seu inventário.",
+            "locais":
+                [
+                    {"id":"bile_1", "coords": [247,600]},
+                    {"id":"bile_2", "coords": [344,777]},
+                    {"id":"bile_3", "coords": [472,632]},
+                    {"id":"bile_4", "coords": [616,520]},
+                    {"id":"bile_5", "coords": [520,200]},
+                    {"id":"bile_6", "coords": [984,488]},
+                    {"id":"bile_7", "coords": [1320,360]}
+                ]
+        },
+
+    "Empty_bile_vessel":
+        {
+            "titulo_padrao": "Vaso Biliar Vazio",
+            "desc_padrao": "Pode ser entregue para Nacimiento para melhorar a eficiência da cura de vida fornecida pelos vasos biliares, ou utilizados em uma fonte sanguínea para aumentar a quantidade de frascos utilizados temporariamente",
+            "locais":
+                [
+                    {"id":"emp_1", "coords": [264,616]},
+                    {"id":"emp_2", "coords": [296,504]},
+                    {"id":"emp_3", "coords": [568,232]},
+                    {"id":"emp_4", "coords": [729,505]},
+                    {"id":"emp_5", "coords": [792,569]},
+                    {"id":"emp_6", "coords": [952,601]},
+                    {"id":"emp_7", "coords": [1080,489]},
+                    {"id":"emp_8", "coords": [984,265]}
+                ]
+
+        },
+
+    "Quicksilver":
+        {
+            "titulo_padrao": "Mercúrio",
+            "desc_padrao": "Uma esfera de prata líquida tocada pelo Milagre. Pode ser entregue ao NPC Nacimiento para aumentar a eficiência da cura de vida fornecida pelos vasos biliares.",
+            "locais":
+                [
+                    {"id": "merc_1", "coords": [361,441]},
+                    {"id": "merc_2", "coords": [425,570]},
+                    {"id": "merc_3", "coords": [906,585]},
+                    {"id": "merc_4", "coords": [888,377]},
+                    {"id": "merc_5", "coords": [920,312]}
+                ]
+        },
+    
+    "Child_light":
+        {
+            "titulo_padrao": "Filhos do Luar",
+            "desc_padrao": "Pequenos bebês presos em uma caixa de vidro e ouro, com mãos aladas segurando-os no ar. Eles podem ser encontrados em toda a Cvstodia.",
+            "locais":
+                [
+                    {"id":"child_1", "coords":[71,402]},
+                    {"id":"child_2", "coords":[248,521]},
+                    {"id":"child_3", "coords":[279,504]},
+                    {"id":"child_4", "coords":[338,569]},
+                    {"id":"child_5", "coords":[387,569]},
+                    {"id":"child_6", "coords":[391,664]},
+                    {"id":"child_7", "coords":[391,809]},
+                    {"id":"child_8", "coords":[457,729]},
+                    {"id":"child_9", "coords":[424,424]},
+                    {"id":"child_10", "coords":[504,409]},
+                    {"id":"child_11", "coords":[504,309]},
+                    {"id":"child_12", "coords":[520,583]},
+                    {"id":"child_13", "coords":[536,215]},
+                    {"id":"child_14", "coords":[552,232]},
+                    {"id":"child_15", "coords":[552,296]},
+                    {"id":"child_16", "coords":[647,328]},
+                    {"id":"child_17", "coords":[616,376]},
+                    {"id":"child_18", "coords":[696,392]},
+                    {"id":"child_19", "coords":[675,423]},
+                    {"id":"child_20", "coords":[537,488]},
+                    {"id":"child_21", "coords":[552,552]},
+                    {"id":"child_22", "coords":[601,503]},
+                    {"id":"child_23", "coords":[648,569]},
+                    {"id":"child_24", "coords":[680,472]},
+                    {"id":"child_25", "coords":[792,521]},
+                    {"id":"child_26", "coords":[888,601]},
+                    {"id":"child_27", "coords":[952,567]},
+                    {"id":"child_28", "coords":[1145,535]},
+                    {"id":"child_29", "coords":[1112,441]},
+                    {"id":"child_30", "coords":[903,409]},
+                    {"id":"child_31", "coords":[1016,393]},
+                    {"id":"child_32", "coords":[1064,393]},
+                    {"id":"child_33", "coords":[1166,352]},
+                    {"id":"child_34", "coords":[991,313]},
+                    {"id":"child_35", "coords":[984,264]},
+                    {"id":"child_36", "coords":[920,263]},
+                    {"id":"child_37", "coords":[952,248]},
+                    {"id":"child_38", "coords":[1144,248]}
+                ]
+        },
+    
+    "NPC":
+        {
+            "npcs":
+                [
+                    {
+                        "id": "npc_1",
+                        "titulo_padrao": "Soledad",
+                        "desc": "Encontrada na seção da Irmandade da Tristeza Silenciosa após Jondo, Soledad receberá Nós de Corda do Rosário e aumentará a quantidade de Contas do Rosário simultâneas que o Penitente pode equipar, em troca de Lágrimas de Expiação.",
+                        "locais":
+                            [
+                                {"id":"soledad_1", "coords": [168,456]}
+                            ]
+                    },
+
+                    {
+                        "id": "npc_2",
+                        "desc_padrao": "Redento é um Peregrino Genuflexo, aparecendo inclinado para a frente com as mãos amarradas atrás das costas e um objeto em volta do pescoço, pesando a cabeça. Seus pés também estão amarrados por um pedaço de corda. Ele menciona que está em peregrinação e cada vez que interage com ele, reclama de um obstáculo em seu caminho.",
+                        "locais":
+                            [
+                                {
+                                    "id": "redento_1",
+                                    "titulo": "Redento - Primeira Localização",
+                                    "coords": [327,504],
+                                    "marker": true
+                                },
+                                {
+                                    "id": "redento_2",
+                                    "titulo": "Redento - Segunda Localização",
+                                    "coords": [184,440],
+                                    "marker": true
+                                },
+                                {
+                                    "id": "redento_3",
+                                    "titulo": "Redento - Terceira Localização",
+                                    "coords": [737,424],
+                                    "marker": true
+                                },
+                                {
+                                    "id": "redento_4",
+                                    "titulo": "Redento - Quarta Localização",
+                                    "coords": [1033,408],
+                                    "marker": true
+                                },
+                                {
+                                    "id": "redento_5",
+                                    "titulo": "Redento - Quinta Localização",
+                                    "coords": [1320,344],
+                                    "marker": true
+                                }
+                            ]
+                    },
+
+                    {
+                        "titulo_padrao": "Esdras",
+                        "desc_padrao":"Esdras é conhecido como membro da Legião Ungida e irmão de Perpetva. O mesmo estará presente nesse local caso o jogador obtenha o Escapulário Incompleto.",
+                        "locais":
+                            [
+                                {"id": "esdras_1", "coords": [40,376]}
+                            ]
+                    },
+
+                    {
+                        "titulo_padrao": "Crisanta",
+                        "desc_padrao": "Crisanta é conhecida como a Lâmina Ungida e a defensora final de Sua Santidade Escribar. A mesma aparecerá como aliada na batalha contra os Altos Testamentos caso o jogador complete a quest da DLC Wounds of Eventide.",
+                        "locais":
+                            [
+                                {"id": "crisanta_1", "coords": [32,376]}
+                            ]
+                    },
+
+                    {
+                        "titulo_padrao": "Deogracias",
+                        "desc_padrao": "Deogracias é conhecido como o cronista de Cvstodia e o principal narrador da jornada. O mesmo estará presente no início do jogo para entregar o Espinho da Culpa e reaparecerá em locais-chave.",
+                        "locais":
+                            [
+                                {"id": "deogracias_1", "coords": [262, 424]},
+                                {"id": "deogracias_2", "coords": [501,776]},
+                                {"id": "deogracias_3", "coords": [504,73]},
+                                {"id": "deogracias_4", "coords": [745,584]},
+                                {"id": "deogracias_5", "coords": [856,425]},
+                                {"id": "deogracias_6", "coords": [888,392]},
+                                {"id": "deogracias_7", "coords": [1160,408]},
+                                {"id": "deogracias_8", "coords": [888,280]},
+                                {"id": "deogracias_9", "coords": [1386,105]}
+                            ]
+                    },
+
+                    {
+                        "titulo_padrao": "Nacimiento",
+                        "desc_padrao": "Nacimiento é conhecido como a face na fonte de Albero que concede os Frascos Biliares. O mesmo estará presente na cisterna abaixo da igreja para receber Mercúrio e, em troca, aumentar a capacidade máxima de Frascos Biliares que o jogador pode carregar.",
+                        "locais":
+                            [
+                                {"id": "nacimiento_1", "coords": [488,456]}
+                            ]
+                    },
+
+                    {
+                        "titulo_padrao": "Guardião do Ossuário",
+                        "desc_padrao": "O Guardião do Ossuário é conhecido como o colecionador dos restos mortais de Cvstodia. O mesmo estará presente no Ossuário, localizado em Albero, para receber os Ossos Colecionáveis que o jogador encontrar, recompensando-o com Lágrimas de Atonia.",
+                        "locais":
+                            [
+                                {"id":"Guardian_1", "coords": [504,441]}
+                            ]
+                    },
+
+                    {
+                        "titulo_padrao": "Quarta Face",
+                        "desc_padrao": "O Quarto Rosto, também conhecido como o Traidor, é um rosto sem olhos de ouro derretido que está aprisionado nas raízes do Nó das Três Palavras. Ele recompensará o Penitente com o verdadeiro Coração Apodítico de Mea Culpa quando ele retornar com sucesso seus dois olhos perdidos.",
+                        "locais":
+                        [
+                            {"id": "Face", "coords": [1142,424]}
+                        ]
+                    }
+                ]
+        }
+}
