@@ -267,6 +267,18 @@
                 ]
         },
     
+    "Relics":
+        {
+            "locais":
+                [
+                    {
+                        "titulo": "Relíquia - Sangue Perpetuado na Areia",
+                        "id": "rel_1"
+                        
+                    }
+                ]
+        },
+
     "NPC":
         {
             "npcs":

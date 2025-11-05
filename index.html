@@ -13,7 +13,171 @@
      crossorigin=""></script>
 </head>
 <body>
-    <div class="filter"></div>
+
+    <div id="container_filter_menu">
+        <div id="button_filter_menu" title="Fechar menu"  onclick="open_menu(event)"></div>
+        <div id="filter" class="filter_menu filter_menu_hidden" onclick="open_menu(event)" title="Abrir menu de filtros">
+            <img src="\imagens/Icons/filter icon.png" alt="Filtros" id="filter_img">
+            <div id="expanded_container">
+                <h3>
+                    Filtros do Mapa
+                </h3>
+                <div id="layers_container">
+                    <div id="filter_controls">
+                        <input type="checkbox" class="invi_check" id="show_layers" onchange="filter_control(event)" name="Control Layers" checked disabled>
+                        <label for="show_layers" class="controls_link">
+                            Mostrar tudo
+                        </label>
+                        <input type="checkbox" class="invi_check" id="hide_layers" onchange="filter_control(event)" name="Control Layers">
+                        <label for="hide_layers">
+                            Esconder tudo
+                        </label>
+                        
+                    </div>
+                    <div>
+                        <input type="checkbox" class="invi_check" id="f_prie_dieu" onchange="remove_layer(event)" name="Prie Dieu" checked>
+                        <label for="f_prie_dieu">
+                            Prie Dieu
+                        </label>
+                        <div class="counter_container">
+                            <h5>
+                                <span id="savepoints_counter_text">xx/xx</span>
+                            </h5>
+                            <div class="counter_bar" id="c_prie_dieu">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="invi_check" id="f_confessor_statue" onchange="remove_layer(event)" name="Estátua do Confessor" checked>
+                        <label for="f_confessor_statue">
+                            Estátua do Confessor
+                        </label>
+                        <div class="counter_container">
+                            <h5>
+                                <span id="confessor_statue_counter_text">xx/xx</span>
+                            </h5>
+                            <div class="counter_bar" id="c_confessor_statue">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="invi_check" id="f_travel_location" onchange="remove_layer(event)" name="Portal de Viagem Rápida" checked>
+                        <label for="f_travel_location">
+                            Portão de Viagem
+                        </label>
+                        <div class="counter_container">
+                            <h5>
+                                <span id="travel_location_counter_text">xx/xx</span>
+                            </h5>
+                            <div class="counter_bar" id="c_travel_location">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="invi_check" id="f_sanguine_fountain" onchange="remove_layer(event)" name="Fontes Sanguíneas" checked>
+                        <label for="f_sanguine_fountain">
+                            Fontes Sanguíneas
+                        </label>
+                        <div class="counter_container">
+                            <h5>
+                                <span id="flask_upg_counter_text">xx/xx</span>
+                            </h5>
+                            <div class="counter_bar" id="c_sanguine_fountain">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="invi_check" id="f_mea_culpa_shrine" onchange="remove_layer(event)" name="Altar de Mea Culpa" checked>
+                        <label for="f_mea_culpa_shrine">
+                            Altar de Mea Culpa
+                        </label>
+                        <div class="counter_container">
+                            <h5>
+                                <span id="mea_culpa_shrine_counter_text">xx/xx</span>
+                            </h5>
+                            <div class="counter_bar" id="c_mea_culpa_shrine">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="invi_check" id="f_lady_six_sorrows" onchange="remove_layer(event)" name="Dama das Seis Dores" checked>
+                        <label for="f_lady_six_sorrows">
+                            Dama das Seis Dores
+                        </label>
+                        <div class="counter_container">
+                            <h5>
+                                <span id="life_upg_counter_text">xx/xx</span>
+                            </h5>
+                            <div class="counter_bar" id="c_lady_six_sorrows">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="invi_check" id="f_pilgrins_oil" onchange="remove_layer(event)" name="Óleo dos Peregrinos" checked>
+                        <label for="f_pilgrins_oil">
+                            Óleo dos Peregrinos
+                        </label>
+                        <div class="counter_container">
+                            <h5>
+                                <span id="fervor_upg_counter_text">xx/xx</span>
+                            </h5>
+                            <div class="counter_bar" id="c_pilgrins_oil">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="invi_check" id="f_quicksilver" onchange="remove_layer(event)" name="Mercúrio" checked>
+                        <label for="f_quicksilver">
+                            Mercúrio
+                        </label>
+                        <div class="counter_container">
+                            <h5>
+                                <span id="Quicksilver_counter_text">xx/xx</span>
+                            </h5>
+                            <div class="counter_bar" id="c_quicksilver">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="invi_check" id="f_child_of_light" onchange="remove_layer(event)" name="Filhos do Luar" checked>
+                        <label for="f_child_of_light">
+                            Filhos do Luar
+                        </label>
+                        <div class="counter_container">
+                            <h5>
+                                <span id="Child_light_counter_text">xx/xx</span>
+                            </h5>
+                            <div class="counter_bar" id="c_child_of_light">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="invi_check" id="f_empty_vessel" onchange="remove_layer(event)" name="Vaso Biliar Vazio" checked>
+                        <label for="f_empty_vessel">
+                            Vaso Biliar Vazio
+                        </label>
+                        <div class="counter_container">
+                            <h5>
+                                <span id="Empty_bile_vessel_counter_text">xx/xx</span>
+                            </h5>
+                            <div class="counter_bar" id="c_empty_vessel">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="map"></div>
     <script src="script.js"></script>
     
