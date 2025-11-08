@@ -46,6 +46,7 @@
         {
             "titulo_padrao":"Estátua de confessoras",
             "desc_padrao": "Interaja com a estátua para o penitente teus seus pecados perdoados, retirar a penalidade adquirida ao morrer.",
+            "img_padrao": "/imagens/Locals/Confessor_statue.jpg",
             "locais":
                 [
                     {"id": "statue_1", "coords": [168,439]},
@@ -231,7 +232,7 @@
                     {"id":"child_3", "coords":[279,504]},
                     {"id":"child_4", "coords":[338,569]},
                     {"id":"child_5", "coords":[387,569]},
-                    {"id":"child_6", "coords":[391,664]},
+                    {"id":"child_6", "coords":[387,664]},
                     {"id":"child_7", "coords":[391,809]},
                     {"id":"child_8", "coords":[457,729]},
                     {"id":"child_9", "coords":[424,424]},
@@ -273,11 +274,62 @@
                 [
                     {
                         "titulo": "Relíquia - Sangue Perpetuado na Areia",
-                        "id": "rel_1"
-                        
+                        "desc": "Adquirido ao utilizar a Chave da Câmra do Irmão Mais Velho, comprada na Candelaria por 400 moedas do jogo. O item permite que o penitente transforme partículas flutuantes em plataformas de sangue",
+                        "id": "rel_1",
+                        "coords": [248, 423]
+                    },
+                    {
+                        "titulo": "Relíquia - Pulmão Prateado de Dolfos",
+                        "desc": "Adquirido em Grievance Ascende, em uma alta sala cheia de veneno. A relíquia permite que o Penitente passe por núvens de gases tóxicos sem sofrer dano",
+                        "id": "rel_2",
+                        "coords": [396, 661]
+                    },
+                    {
+                        "titulo": "Relíquia - Mortalha dos Pecados Sonhados",
+                        "desc": "Dado pela estátua presente no Lago dos Peregrinos Silenciosos em troca de Pano de Linho. Permite o peminente escutar as vozes de certos cadáveres pelo mapa.",
+                        "id": "rel_3",
+                        "coords": [463, 421]
+                    },
+                    {
+                        "titulo": "Relíquia - Mão Incorrupta do Mestre Fraterno",
+                        "desc": "Dado pela estátua presente no Lago dos Peregrinos Silenciosos em troca da Mão Decepada. Quando equipada, emite um discreto som quando o penitente se encontra próximo a uma parede invisível.",
+                        "id": "rel_4",
+                        "coords": [470, 421]
+                    },
+                    {
+                        "titulo": "Relíquia - Três línguas retorcidas",
+                        "desc": "Realize a quest do Ovo da Deformidade e, com o ovo já chocado, entregue o mesmo para a estátua presente no Lago dos Peregrinos Silenciosos. Tal item acorda raízes dormentes pelo mapa, liberando diversas passarelas e superfícies escaláveis.",
+                        "id": "rel_5",
+                        "coords": [477, 421]
+                    },
+                    {
+                        "titulo": "Relíquia - ",
+                        "desc": "",
+                        "id": "rel_6",
+                        "coords": [1033, 567]
+                    },
+                    {
+                        "titulo": "Relíquia - ",
+                        "desc": "",
+                        "id": "rel_7",
+                        "coords": [1321, 343]
                     }
                 ]
         },
+
+    "Bosses":
+        {
+            "locais":
+                [
+                    {
+                        "titulo": "",
+                        "desc": "",
+                        "id": "boss_1",
+                        "coords": [183, 425],
+                        "img": "/imagens/Locals/Bosses/Warden_of_Silent_Sorrow.jpg"
+                    }
+                ]
+        }
 
     "NPC":
         {

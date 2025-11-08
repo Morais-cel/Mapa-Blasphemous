@@ -29,6 +29,7 @@ const FountainIcon= createicon("\imagens/Icons/Oil Fountain.png");
 const QuicksilverIcon= createicon("\imagens/Icons/Quicksilver.png");
 const EmptyBileIcon= createicon("\imagens/Icons/Empty Bile Vessel.png");
 const ChildIcon= createicon("\imagens/Icons/Children of Light.png")
+const RelicIcon= createicon("\imagens/Icons/Relics.png")
 
 //Camadas de itens presentes no mapa
 
@@ -48,6 +49,7 @@ const Oil_Fountain_Layer= L.layerGroup().addTo(map);
 const Empty_Bile_layer= L.layerGroup().addTo(map);
 const Quicksilver_layer= L.layerGroup().addTo(map);
 const Child_of_light_layer= L.layerGroup().addTo(map);
+const Relics_layer= L.layerGroup().addTo(map)
 
 const Layers= {
     "Prie Dieu": Savepoint_Layer,
@@ -59,127 +61,9 @@ const Layers= {
     "Óleo dos Peregrinos": Oil_Fountain_Layer,
     "Mercúrio": Quicksilver_layer,
     "Filhos do Luar": Child_of_light_layer,
-    "Vaso Biliar Vazio": Empty_Bile_layer
+    "Vaso Biliar Vazio": Empty_Bile_layer,
+    "Relíquias": Relics_layer
 }
-
-function getSavedState()
-{
-    const savestateJSON= localStorage.getItem('BlasphemousMapState');
-    return savestateJSON ? JSON.parse(savestateJSON) : {};
-}
-
-function saveState(state)
-{
-    localStorage.setItem('BlasphemousMapState', JSON.stringify(state));
-}
-
-let collectedState= getSavedState();
-
-function popup_struct(title, desc, id, ref)
-{
-    const structure= document.createElement('div')
-    const title_elem= document.createElement('h2');
-    const desc_elem= document.createElement('p');
-
-    L.DomUtil.addClass(structure, "popup")
-
-    title_elem.innerText= title;
-    desc_elem.innerHTML= desc
-
-
-    const div_checkbox= document.createElement('div');
-    L.DomUtil.addClass(div_checkbox, "div_checkbox");
-
-    const checkbox= document.createElement('input');
-    checkbox.type= 'checkbox';
-    checkbox.name= `${title}`;
-    checkbox.id= `chk-${id}`;
-
-    const label= document.createElement('label');
-    label.innerText= "Encontrado";
-    label.htmlFor= `chk-${id}`;
-
-    
-
-    if (collectedState[id])
-        {
-            checkbox.checked= true
-        }
-    else
-        {
-            checkbox.checked= false
-        };
-
-    checkbox.addEventListener('click', () => {
-        if(L.DomUtil.hasClass(ref.getElement(), "mark"))
-            {
-                L.DomUtil.removeClass(ref.getElement(), "mark");
-                L.DomUtil.addClass(ref.getElement(),"non_mark");
-                delete collectedState[id];
-            }
-        else
-            {
-                L.DomUtil.removeClass(ref.getElement(), "non_mark");
-                L.DomUtil.addClass(ref.getElement(), "mark");
-                collectedState[id] = true;
-            }
-        saveState(collectedState);
-        progress_check();
-        console.log(collectedState)
-    });
-
-    structure.appendChild(title_elem);
-    structure.appendChild(desc_elem);
-
-    div_checkbox.appendChild(checkbox);
-    div_checkbox.appendChild(label);
-    structure.appendChild(div_checkbox);
-
-    return structure
-};
-
-function create_marker(data, json_part, layer, icon)
-{
-    const part= data[json_part];
-    if(part.locais)
-    {
-        part.locais.forEach(local => {
-        let coords= [bounds[1][0]-local.coords[1],local.coords[0]];
-
-        let title= local.titulo || part.titulo_padrao;
-        let desc= local.desc || part.desc_padrao;
-
-        const marker= L.marker(coords, {icon: icon}).addTo(layer)
-
-        const LocalId= local.id;
-
-        if(collectedState[LocalId])
-            {
-                L.DomUtil.addClass(marker.getElement(), "mark")
-            }
-    
-
-        marker.on('click', (e) => {
-
-            L.popup(
-                {
-                    closeButton: false,
-                    keepInView: false,
-                    closeOnClick: true,
-                }
-            )
-            .setLatLng([coords[0]+15, coords[1]])
-            .setContent(popup_struct(title, desc, LocalId, marker, json_part))
-            .openOn(map)
-            })
-
-        });
-    }
-    else
-    {
-        return
-    }
-};
 
 const categoryConfig = {
     "savepoints": 
@@ -242,6 +126,159 @@ const categoryConfig = {
         textElement: document.getElementById('Empty_bile_vessel_counter_text'),
         barElement: document.getElementById('c_empty_vessel'),
         checkbox: document.getElementById('f_empty_vessel')
+    },
+    "Relics": 
+    {
+        textElement: document.getElementById('Relics_counter_text'),
+        barElement: document.getElementById('c_relics'),
+        checkbox: document.getElementById('f_relics')
+    }
+};
+
+function getSavedState()
+{
+    const savestateJSON= localStorage.getItem('BlasphemousMapState');
+    return savestateJSON ? JSON.parse(savestateJSON) : {};
+}
+
+function saveState(state)
+{
+    localStorage.setItem('BlasphemousMapState', JSON.stringify(state));
+}
+
+let collectedState= getSavedState();
+
+function popup_struct(title, desc, id, ref, img= null)
+{
+    const structure= document.createElement('div')
+    const title_elem= document.createElement('h2');
+    const desc_elem= document.createElement('p');
+
+    L.DomUtil.addClass(structure, "popup")
+
+    title_elem.innerText= title;
+    desc_elem.innerHTML= desc
+
+
+    const div_checkbox= document.createElement('div');
+    L.DomUtil.addClass(div_checkbox, "div_checkbox");
+
+    const checkbox= document.createElement('input');
+    checkbox.type= 'checkbox';
+    checkbox.name= `${title}`;
+    checkbox.id= `chk-${id}`;
+
+    const label= document.createElement('label');
+    label.innerText= "Encontrado";
+    label.htmlFor= `chk-${id}`;
+
+    
+
+    if (collectedState[id])
+        {
+            checkbox.checked= true
+        }
+    else
+        {
+            checkbox.checked= false
+        };
+
+    checkbox.addEventListener('click', () => {
+        if(L.DomUtil.hasClass(ref.getElement(), "mark"))
+            {
+                L.DomUtil.removeClass(ref.getElement(), "mark");
+                L.DomUtil.addClass(ref.getElement(),"non_mark");
+                delete collectedState[id];
+            }
+        else
+            {
+                L.DomUtil.removeClass(ref.getElement(), "non_mark");
+                L.DomUtil.addClass(ref.getElement(), "mark");
+                collectedState[id] = true;
+            }
+        saveState(collectedState);
+        progress_check();
+        console.log(collectedState)
+    });
+
+    if (img != null)
+    {
+        const img_element= document.createElement("img");
+        img_element.src= img
+        structure.appendChild(img_element);
+    }
+
+
+    structure.appendChild(title_elem);
+    structure.appendChild(desc_elem);
+
+    div_checkbox.appendChild(checkbox);
+    div_checkbox.appendChild(label);
+    structure.appendChild(div_checkbox);
+
+    return structure
+};
+
+function create_marker(data, json_part, layer, icon)
+{
+    const part= data[json_part];
+    if (part.locais)
+    {
+        part.locais.forEach(local => {
+        const coords= [bounds[1][0]-local.coords[1],local.coords[0]];
+
+        const title= local.titulo || part.titulo_padrao;
+        const desc= local.desc || part.desc_padrao;
+
+        const marker= L.marker(coords, {icon: icon}).addTo(layer)
+
+        const LocalId= local.id;
+
+        if(collectedState[LocalId])
+            {
+                L.DomUtil.addClass(marker.getElement(), "mark")
+            }
+    
+
+        marker.on('click', (e) => {
+
+            const latlon= e.latlng;
+            map.setView(latlon, 0.5)
+
+            if (local.img || part.img_padrao)
+            {
+                const img= local.img || part.img_padrao;
+                L.popup(
+                {
+                    closeButton: false,
+                    keepInView: false,
+                    closeOnClick: true,
+                    autoPan: false,
+                })
+                .setLatLng([coords[0]+15, coords[1]])
+                .setContent(popup_struct(title, desc, LocalId, marker, img))
+                .openOn(map)
+            }
+            else
+            {
+                L.popup(
+                {
+                    closeButton: false,
+                    keepInView: false,
+                    closeOnClick: true,
+                    autoPan: false
+                })
+                .setLatLng([coords[0]+15, coords[1]])
+                .setContent(popup_struct(title, desc, LocalId, marker))
+                .openOn(map)
+            }
+        })
+
+        });
+    }
+    else
+    {
+        return
     }
 };
 
@@ -387,7 +424,7 @@ function filter_control(e)
         show_all.disabled= true;
         show_all.checked= true
     };
-    
+
     if (uncheck_all_aux)
     {
         hide_all.disabled= true;
@@ -426,5 +463,7 @@ fetch('dados.json')
         create_marker(data, "Child_light", Child_of_light_layer, ChildIcon);
 
         create_marker(data, "Empty_bile_vessel", Empty_Bile_layer, EmptyBileIcon);
+
+        create_marker(data, "Relics", Relics_layer, RelicIcon)
 
     })
