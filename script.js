@@ -19,17 +19,18 @@ function createicon(url){
     });
 }
 
-const saveIcon= createicon("\imagens/Icons/Prie Dieu.png");
-const ConfessorIcon= createicon("\imagens/Icons/Confessor Statue.png");
-const portalIcon= createicon("\imagens/Icons/Fast Travel.png");
-const MeaCulpaIcon= createicon("\imagens/Icons/Mea Culpa.png");
-const SanguineIcon= createicon("\imagens/Icons/Sanguine Fountain.png");
-const LadyIcon= createicon("\imagens/Icons/Six Sorrows Lady.png");
-const FountainIcon= createicon("\imagens/Icons/Oil Fountain.png");
-const QuicksilverIcon= createicon("\imagens/Icons/Quicksilver.png");
-const EmptyBileIcon= createicon("\imagens/Icons/Empty Bile Vessel.png");
-const ChildIcon= createicon("\imagens/Icons/Children of Light.png")
-const RelicIcon= createicon("\imagens/Icons/Relics.png")
+const saveIcon= createicon("imagens/Icons/Prie Dieu.png");
+const ConfessorIcon= createicon("imagens/Icons/Confessor Statue.png");
+const portalIcon= createicon("imagens/Icons/Fast Travel.png");
+const MeaCulpaIcon= createicon("imagens/Icons/Mea Culpa.png");
+const SanguineIcon= createicon("imagens/Icons/Sanguine Fountain.png");
+const LadyIcon= createicon("imagens/Icons/Six Sorrows Lady.png");
+const FountainIcon= createicon("imagens/Icons/Oil Fountain.png");
+const QuicksilverIcon= createicon("imagens/Icons/Quicksilver.png");
+const EmptyBileIcon= createicon("imagens/Icons/Empty Bile Vessel.png");
+const ChildIcon= createicon("imagens/Icons/Children of Light.png")
+const RelicIcon= createicon("imagens/Icons/Relics.png");
+const BossesIcon= createicon("imagens/Icons/Bosses.png");
 
 //Camadas de itens presentes no mapa
 
@@ -49,7 +50,8 @@ const Oil_Fountain_Layer= L.layerGroup().addTo(map);
 const Empty_Bile_layer= L.layerGroup().addTo(map);
 const Quicksilver_layer= L.layerGroup().addTo(map);
 const Child_of_light_layer= L.layerGroup().addTo(map);
-const Relics_layer= L.layerGroup().addTo(map)
+const Relics_layer= L.layerGroup().addTo(map);
+const Bosses_layer= L.layerGroup().addTo(map);
 
 const Layers= {
     "Prie Dieu": Savepoint_Layer,
@@ -62,7 +64,8 @@ const Layers= {
     "Mercúrio": Quicksilver_layer,
     "Filhos do Luar": Child_of_light_layer,
     "Vaso Biliar Vazio": Empty_Bile_layer,
-    "Relíquias": Relics_layer
+    "Relíquias": Relics_layer,
+    "Chefes": Bosses_layer
 }
 
 const categoryConfig = {
@@ -132,6 +135,12 @@ const categoryConfig = {
         textElement: document.getElementById('Relics_counter_text'),
         barElement: document.getElementById('c_relics'),
         checkbox: document.getElementById('f_relics')
+    },
+    "Bosses": 
+    {
+        textElement: document.getElementById('Bosses_counter_text'),
+        barElement: document.getElementById('c_bosses'),
+        checkbox: document.getElementById('f_bosses')
     }
 };
 
@@ -464,6 +473,8 @@ fetch('dados.json')
 
         create_marker(data, "Empty_bile_vessel", Empty_Bile_layer, EmptyBileIcon);
 
-        create_marker(data, "Relics", Relics_layer, RelicIcon)
+        create_marker(data, "Relics", Relics_layer, RelicIcon);
+
+        create_marker(data, "Bosses", Bosses_layer, BossesIcon)
 
     })
