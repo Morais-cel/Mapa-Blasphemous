@@ -11,6 +11,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
+     <link rel="shortcut icon" href="imagens/Icons/Icon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -29,13 +30,13 @@
                             Mostrar tudo
                         </label>
                         <input type="checkbox" class="invi_check" id="hide_layers" onchange="filter_control(event)" name="Control Layers">
-                        <label for="hide_layers">
+                        <label for="hide_layers"  class="controls_link">
                             Esconder tudo
                         </label>
                         
                     </div>
-                    <div>
-                        <input type="checkbox" class="invi_check" id="f_prie_dieu" onchange="remove_layer(event)" name="Prie Dieu" checked>
+                    <div class="itens">
+                        <input type="checkbox" class="invi_check" id="f_prie_dieu" onchange="change_layer(event)" name="Prie Dieu" checked>
                         <label for="f_prie_dieu">
                             Prie Dieu
                         </label>
@@ -48,8 +49,8 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <input type="checkbox" class="invi_check" id="f_confessor_statue" onchange="remove_layer(event)" name="Estátua do Confessor" checked>
+                    <div class="itens">
+                        <input type="checkbox" class="invi_check" id="f_confessor_statue" onchange="change_layer(event)" name="Estátua do Confessor" checked>
                         <label for="f_confessor_statue">
                             Estátua do Confessor
                         </label>
@@ -62,8 +63,8 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <input type="checkbox" class="invi_check" id="f_travel_location" onchange="remove_layer(event)" name="Portal de Viagem Rápida" checked>
+                    <div class="itens">
+                        <input type="checkbox" class="invi_check" id="f_travel_location" onchange="change_layer(event)" name="Portal de Viagem Rápida" checked>
                         <label for="f_travel_location">
                             Portão de Viagem
                         </label>
@@ -76,8 +77,8 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <input type="checkbox" class="invi_check" id="f_sanguine_fountain" onchange="remove_layer(event)" name="Fontes Sanguíneas" checked>
+                    <div class="itens">
+                        <input type="checkbox" class="invi_check" id="f_sanguine_fountain" onchange="change_layer(event)" name="Fontes Sanguíneas" checked>
                         <label for="f_sanguine_fountain">
                             Fontes Sanguíneas
                         </label>
@@ -90,8 +91,8 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <input type="checkbox" class="invi_check" id="f_mea_culpa_shrine" onchange="remove_layer(event)" name="Altar de Mea Culpa" checked>
+                    <div class="itens">
+                        <input type="checkbox" class="invi_check" id="f_mea_culpa_shrine" onchange="change_layer(event)" name="Altar de Mea Culpa" checked>
                         <label for="f_mea_culpa_shrine">
                             Altar de Mea Culpa
                         </label>
@@ -104,8 +105,8 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <input type="checkbox" class="invi_check" id="f_lady_six_sorrows" onchange="remove_layer(event)" name="Dama das Seis Dores" checked>
+                    <div class="itens">
+                        <input type="checkbox" class="invi_check" id="f_lady_six_sorrows" onchange="change_layer(event)" name="Dama das Seis Dores" checked>
                         <label for="f_lady_six_sorrows">
                             Dama das Seis Dores
                         </label>
@@ -118,8 +119,8 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <input type="checkbox" class="invi_check" id="f_pilgrins_oil" onchange="remove_layer(event)" name="Óleo dos Peregrinos" checked>
+                    <div class="itens">
+                        <input type="checkbox" class="invi_check" id="f_pilgrins_oil" onchange="change_layer(event)" name="Óleo dos Peregrinos" checked>
                         <label for="f_pilgrins_oil">
                             Óleo dos Peregrinos
                         </label>
@@ -132,8 +133,8 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <input type="checkbox" class="invi_check" id="f_quicksilver" onchange="remove_layer(event)" name="Mercúrio" checked>
+                    <div class="itens">
+                        <input type="checkbox" class="invi_check" id="f_quicksilver" onchange="change_layer(event)" name="Mercúrio" checked>
                         <label for="f_quicksilver">
                             Mercúrio
                         </label>
@@ -146,8 +147,8 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <input type="checkbox" class="invi_check" id="f_child_of_light" onchange="remove_layer(event)" name="Filhos do Luar" checked>
+                    <div class="itens">
+                        <input type="checkbox" class="invi_check" id="f_child_of_light" onchange="change_layer(event)" name="Filhos do Luar" checked>
                         <label for="f_child_of_light">
                             Filhos do Luar
                         </label>
@@ -160,8 +161,8 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <input type="checkbox" class="invi_check" id="f_empty_vessel" onchange="remove_layer(event)" name="Vaso Biliar Vazio" checked>
+                    <div class="itens">
+                        <input type="checkbox" class="invi_check" id="f_empty_vessel" onchange="change_layer(event)" name="Vaso Biliar Vazio" checked>
                         <label for="f_empty_vessel">
                             Vaso Biliar Vazio
                         </label>
@@ -174,10 +175,10 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <input type="checkbox" class="invi_check" id="f_relics" onchange="remove_layer(event)" name="Relíquias" checked>
+                    <div class="itens">
+                        <input type="checkbox" class="invi_check" id="f_relics" onchange="change_layer(event)" name="Relíquias" checked>
                         <label for="f_relics">
-                            Relíquias
+                            Relíquias 
                         </label>
                         <div class="counter_container">
                             <h5>
@@ -188,8 +189,8 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <input type="checkbox" class="invi_check" id="f_bosses" onchange="remove_layer(event)" name="Chefes" checked>
+                    <div class="itens">
+                        <input type="checkbox" class="invi_check" id="f_bosses" onchange="change_layer(event)" name="Chefes" checked>
                         <label for="f_bosses">
                             Chefes
                         </label>
@@ -208,6 +209,5 @@
     </div>
     <div id="map"></div>
     <script src="script.js"></script>
-    
 </body>
 </html>

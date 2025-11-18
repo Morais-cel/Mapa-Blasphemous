@@ -1,10 +1,10 @@
 const map = L.map('map', {
     crs: L.CRS.Simple,
-    minZoom: 0,
+    minZoom: -1,
     maxZoom: 1,
     zoomControl: false,
     scrollWheelZoom: true,
-    maxBounds: [[-100,-100], [950, 1600]],
+    maxBounds: [[-400,-400], [1250, 2000]],
 });
 
 
@@ -39,7 +39,7 @@ const bounds = [[0, 0], [864, 1472]];
 const imgURL='\imagens/complete_map.webp';
 
 L.imageOverlay(imgURL,bounds).addTo(map);
-map.fitBounds(bounds);
+map.setView([432, 736], 0);
 
 const Savepoint_Layer= L.layerGroup().addTo(map);
 const Confessor_Statue_Layer= L.layerGroup().addTo(map);
@@ -160,12 +160,17 @@ let collectedState= getSavedState();
 function popup_struct(title, desc, id, ref, img= null)
 {
     const structure= document.createElement('div')
-    const title_elem= document.createElement('h2');
-    const desc_elem= document.createElement('p');
+    
+    const div_title= document.createElement('div');
+    L.DomUtil.addClass(div_title, "div_title")
+    const title_span= document.createElement('span')
+
+    const desc_elem= document.createElement('div');
+    L.DomUtil.addClass(desc_elem, "div_desc")
 
     L.DomUtil.addClass(structure, "popup")
 
-    title_elem.innerText= title;
+    title_span.innerText= title;
     desc_elem.innerHTML= desc
 
 
@@ -196,18 +201,15 @@ function popup_struct(title, desc, id, ref, img= null)
         if(L.DomUtil.hasClass(ref.getElement(), "mark"))
             {
                 L.DomUtil.removeClass(ref.getElement(), "mark");
-                L.DomUtil.addClass(ref.getElement(),"non_mark");
                 delete collectedState[id];
             }
         else
             {
-                L.DomUtil.removeClass(ref.getElement(), "non_mark");
                 L.DomUtil.addClass(ref.getElement(), "mark");
                 collectedState[id] = true;
             }
         saveState(collectedState);
         progress_check();
-        console.log(collectedState)
     });
 
     if (img != null)
@@ -218,7 +220,9 @@ function popup_struct(title, desc, id, ref, img= null)
     }
 
 
-    structure.appendChild(title_elem);
+    div_title.appendChild(title_span);
+
+    structure.appendChild(div_title)
     structure.appendChild(desc_elem);
 
     div_checkbox.appendChild(checkbox);
@@ -243,16 +247,11 @@ function create_marker(data, json_part, layer, icon)
 
         const LocalId= local.id;
 
-        if(collectedState[LocalId])
-            {
-                L.DomUtil.addClass(marker.getElement(), "mark")
-            }
-    
-
         marker.on('click', (e) => {
 
-            const latlon= e.latlng;
-            map.setView(latlon, 0.5)
+            //console.log(coords)
+            
+            map.setView([coords[0]+100,coords[1]], 0.5)
 
             if (local.img || part.img_padrao)
             {
@@ -266,7 +265,7 @@ function create_marker(data, json_part, layer, icon)
                 })
                 .setLatLng([coords[0]+15, coords[1]])
                 .setContent(popup_struct(title, desc, LocalId, marker, img))
-                .openOn(map)
+                .openOn(map);
             }
             else
             {
@@ -281,6 +280,14 @@ function create_marker(data, json_part, layer, icon)
                 .setContent(popup_struct(title, desc, LocalId, marker))
                 .openOn(map)
             }
+        })
+
+        marker.on("add", () =>
+        {
+
+            if (collectedState[LocalId])
+                L.DomUtil.addClass(marker.getElement(), "mark")
+
         })
 
         });
@@ -313,6 +320,7 @@ function progress_check()
                 }                
 
                 total_percent= (current/total)*100;
+
 
                 config.textElement.innerText=`${current}/${total}`;
                 config.barElement.children[0].style.width= `${total_percent}%`;
@@ -347,7 +355,7 @@ function open_menu(e)
     };
 };
 
-function remove_layer(e)
+function change_layer(e)
 {
     const Layer_att= e.target.name;
     const show_all= document.getElementById("show_layers");
